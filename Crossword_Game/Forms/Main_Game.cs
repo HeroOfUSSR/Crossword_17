@@ -32,7 +32,7 @@ namespace Crossword_Game
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Автор программы: Иванов Алексей, ИП-20-7к", "Помощи нет");
+            MessageBox.Show("Мне лень писать гайд","Автор: Иванов Алексей, ИП-20-7к");
         }
 
  
@@ -55,15 +55,12 @@ namespace Crossword_Game
             for (int i = 0; i < 20; i++)
                 board.Rows.Add();
 
-            //Установка ширины колонок
             foreach (DataGridViewColumn c in board.Columns)
                 c.Width = board.Width / board.Columns.Count;
 
-            //Установка ширины рядов
             foreach (DataGridViewRow r in board.Rows)
                 r.Height = board.Height / board.Rows.Count;
 
-            //Только чтение для всех ячеек
             for (int row =0; row < board.Rows.Count; row++)
             {
                 for (int col = 0; col < board.Columns.Count; col++)
@@ -93,7 +90,7 @@ namespace Crossword_Game
             DataGridViewCell c = board[col, row];
             c.Style.BackColor = Color.White;
             c.ReadOnly = false;
-            c.Style.SelectionBackColor = Color.LightSkyBlue;
+            c.Style.SelectionBackColor = Color.LightGray;
             c.Tag = letter;
         }
 
@@ -159,6 +156,20 @@ namespace Crossword_Game
                 InitializeBoard();
             }
         }
+
+       private void board_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+       {
+           string number = "";
+           if (list.Any(c => (number = c.number) != "" && c.X == e.ColumnIndex && c.Y == e.RowIndex))
+           {
+                Rectangle r = new Rectangle(e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width, e.CellBounds.Height);
+                e.Graphics.FillRectangle(Brushes.White, r);
+                Font f = new Font(e.CellStyle.Font.FontFamily, 7);
+                e.Graphics.DrawString(number, f, Brushes.Black, r);
+                e.PaintContent(e.ClipBounds);
+                e.Handled = true;
+           }
+       }
     }
 
     public class id_cells

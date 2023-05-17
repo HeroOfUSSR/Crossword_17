@@ -149,6 +149,7 @@ namespace Crossword_Game
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.board.DefaultCellStyle = dataGridViewCellStyle1;
             this.board.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.board.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.board.Location = new System.Drawing.Point(0, 24);
             this.board.Name = "board";
             this.board.RowHeadersVisible = false;
@@ -156,6 +157,7 @@ namespace Crossword_Game
             this.board.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.board.Size = new System.Drawing.Size(744, 467);
             this.board.TabIndex = 1;
+            this.board.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.board_CellPainting);
             this.board.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.board_CellValueChanged);
             // 
             // Column1
