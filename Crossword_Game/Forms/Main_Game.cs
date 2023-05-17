@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Crossword_Game.Forms;
 
 namespace Crossword_Game
 {
@@ -52,7 +53,7 @@ namespace Crossword_Game
             board.BackgroundColor = Color.Black;
             board.DefaultCellStyle.BackColor = Color.Black;
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 20 ; i++)
                 board.Rows.Add();
 
             foreach (DataGridViewColumn c in board.Columns)
@@ -61,7 +62,7 @@ namespace Crossword_Game
             foreach (DataGridViewRow r in board.Rows)
                 r.Height = board.Height / board.Rows.Count;
 
-            for (int row =0; row < board.Rows.Count; row++)
+            for (int row = 0; row < board.Rows.Count; row++)
             {
                 for (int col = 0; col < board.Columns.Count; col++)
                     board[col, row].ReadOnly = true;
@@ -170,6 +171,13 @@ namespace Crossword_Game
                 e.Handled = true;
            }
        }
+
+       // private void редакторКроссвордовToolStripMenuItem_Click(object sender, EventArgs e)
+       // {
+       //     CrossMaker NewWindow = new CrossMaker();
+       //     CrossMaker.Show();
+
+       // }
     }
 
     public class id_cells

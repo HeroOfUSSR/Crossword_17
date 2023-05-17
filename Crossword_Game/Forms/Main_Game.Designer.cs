@@ -57,6 +57,7 @@ namespace Crossword_Game
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.редакторКроссвордовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.board)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,8 @@ namespace Crossword_Game
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.помощьToolStripMenuItem});
+            this.помощьToolStripMenuItem,
+            this.редакторКроссвордовToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(744, 24);
@@ -106,7 +108,7 @@ namespace Crossword_Game
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -279,6 +281,13 @@ namespace Crossword_Game
             this.Column20.HeaderText = "Column20";
             this.Column20.Name = "Column20";
             // 
+            // редакторКроссвордовToolStripMenuItem
+            // 
+            this.редакторКроссвордовToolStripMenuItem.Name = "редакторКроссвордовToolStripMenuItem";
+            this.редакторКроссвордовToolStripMenuItem.Size = new System.Drawing.Size(143, 20);
+            this.редакторКроссвордовToolStripMenuItem.Text = "Редактор кроссвордов";
+           // this.редакторКроссвордовToolStripMenuItem.Click += new System.EventHandler(this.редакторКроссвордовToolStripMenuItem_Click);
+            // 
             // Main_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -332,6 +341,7 @@ namespace Crossword_Game
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.ToolStripMenuItem редакторКроссвордовToolStripMenuItem;
     }
 }
 
